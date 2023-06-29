@@ -116,7 +116,7 @@ name = []
 data1 = [[] for _ in range(len(plot_keywords))]
 data2 = [[] for _ in range(len(plot_keywords))]
 
-with open("result.yml", "r") as f:
+with open("example output/result.yml", "r") as f:
     data = yaml.safe_load(f)
     for cmd in data:
         # boolean if the cmd has tests

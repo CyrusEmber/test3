@@ -176,13 +176,16 @@ class YmlParser:
         pass
 
 
-# used for yaml class read
+# used for yaml class read if you want to save class object
 def cmd_constructor(loader, node):
     cmd, specific_test, value = loader.construct_scalar(node)
     return CMD(cmd, specific_test, value)
 
 
 class CMD:
+    """
+    This class is for extensive use of cmd, more expressive compared with dictionary.
+    """
     yaml_tag = 'CMD'
 
     def __init__(self, cmd, specific_test={"log-likelihood:": [], "used:": []}, value={}, single_aln=None,
